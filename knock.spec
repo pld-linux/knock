@@ -10,7 +10,7 @@ Source0:	http://zeroflux.org/knock/%{name}-%{version}.tar.gz
 Source1:	%{name}d.sysconfig
 Source2:	%{name}d.init
 URL:		http://zeroflux.org/knock/
-BuildRequires:  libpcap-devel
+BuildRequires:	libpcap-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
