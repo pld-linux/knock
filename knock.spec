@@ -1,5 +1,5 @@
-Summary:	Knock is a port-knocking server/client.
-Summary(pl):	Knock jest serwerem/klientem "port-knocking"
+Summary:	Knock - a port-knocking server/client
+Summary(pl):	Knock - serwer/klient "port-knocking"
 Name:		knock
 Version:	0.3.1
 Release:	1
@@ -10,8 +10,8 @@ Source0:	http://zeroflux.org/knock/%{name}-%{version}.tar.gz
 Source1:	%{name}d.sysconfig
 Source2:	%{name}d.init
 URL:		http://zeroflux.org/knock/
-Requires(post,postun):	/sbin/chkconfig
 BuildRequires:  libpcap-devel
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,9 +29,9 @@ portami (niekoniecznie otwartymi) powoduje wywo³anie wcze¶niej
 okre¶lonej czynno¶ci. Ten pakiet zawiera klienta.
 
 %package server
+Summary:	Knock - a port-knocking server/client.
+Summary(pl):	Knock - serwer/klient "port-knocking"
 Group:		Applications/System
-Summary:	Knock is a port-knocking server/client.
-Summary(pl):	Knock jest serwerem/klientem "port-knocking"
 Requires(post,preun):	/sbin/chkconfig
 
 %description server
