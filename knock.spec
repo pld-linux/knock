@@ -44,7 +44,7 @@ package contains the knockd server.
 
 %description server -l pl
 Knock jest serwerem/klientem nas³uchuj±cym/pukaj±cym do portów. Klient
-poprzez próby ³±czenia siê w okre¶lonej kolejn o¶ci z odpowiednimi
+poprzez próby ³±czenia siê w okre¶lonej kolejno¶ci z odpowiednimi
 portami (niekoniecznie otwartymi) powoduje wywo³anie wcze¶niej
 okre¶lonej czynno¶ci. Ten pakiet zawiera serwer.
 
