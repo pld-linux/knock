@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# knockd	knockd short service description
+#
+# chkconfig:	345 85 15
+#
+# description:	Knock is a port-knocking server/client.
+#
+# $Id$
+
+
+. /etc/rc.d/init.d/functions
+. /etc/sysconfig/network
+
+[ -f /etc/sysconfig/knockd ] && . /etc/sysconfig/knockd
+
+# Check that networking is up.
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network ]; then
+		# nls "ERROR: Networking is down. %s can't be run." knockd
+		msg_network_down knockd
+		exit 1
+	fi
+else
+	exit 0
+fi
+
+case "$1" in
+  start)
+	if [ ! -f /var/lock/subsys/knockd ]; then
+		msg_starting knockd
+		daemon /usr/sbin/knockd -d $KNOCKD_OPTIONS
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/knockd
+	else
+		msg_already_running knockd
+	fi
+	;;
+  stop)
+	if [ -f /var/lock/subsys/knockd ]; then
+		msg_stopping knockd
+		killproc knockd
+		rm -f /var/lock/subsys/knockd
+	else
+		msg_not_running knockd
+	fi
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  force-reload)
+	$0 restart
+	;;
+  status)
+	status knockd
+	RETVAL=$?
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|status}"
+	exit 3
+esac
+
+exit $RETVAL
+
+# This must be last line !
+# vi:syntax=sh:tw=78:ts=8:sw=4

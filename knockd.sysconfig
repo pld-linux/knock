@@ -1,0 +1,5 @@
+# $Id$
+
+# command-line options for /usr/sbin/knockd
+KNOCKD_OPTIONS=""
+
