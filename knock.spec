@@ -3,7 +3,7 @@ Summary(pl):	Knock jest serwerem/klientem "port-knocking"
 Name:		knock
 Version:	0.3.1
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/System
 Source0:	http://zeroflux.org/knock/%{name}-%{version}.tar.gz
 # Source0-md5:	b51cbce9e12bd08f6e3cde787df5e934
