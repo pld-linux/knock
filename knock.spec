@@ -1,12 +1,12 @@
 Summary:	Knock - a port-knocking server/client
 Summary(pl):	Knock - serwer/klient "port-knocking"
 Name:		knock
-Version:	0.3.1
+Version:	0.4
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://zeroflux.org/knock/%{name}-%{version}.tar.gz
-# Source0-md5:	b51cbce9e12bd08f6e3cde787df5e934
+Source0:	http://zeroflux.org/knock/files/%{name}-%{version}.tar.gz
+# Source0-md5:	6795a3c32d8e4373790bed50655360a9
 Source1:	%{name}d.sysconfig
 Source2:	%{name}d.init
 URL:		http://zeroflux.org/knock/
