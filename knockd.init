@@ -17,7 +17,6 @@
 # Check that networking is up.
 if is_yes "${NETWORKING}"; then
 	if [ ! -f /var/lock/subsys/network ]; then
-		# nls "ERROR: Networking is down. %s can't be run." knockd
 		msg_network_down knockd
 		exit 1
 	fi
