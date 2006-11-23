@@ -2,14 +2,14 @@ Summary:	Knock - a port-knocking server/client
 Summary(pl):	Knock - serwer/klient "port-knocking"
 Name:		knock
 Version:	0.5
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://zeroflux.org/knock/files/%{name}-%{version}.tar.gz
+Source0:	http://zeroflux.org/proj/knock/files/%{name}-%{version}.tar.gz
 # Source0-md5:	ca09d61458974cff90a700aba6120891
 Source1:	%{name}d.sysconfig
 Source2:	%{name}d.init
-URL:		http://zeroflux.org/knock/
+URL:		http://zeroflux.org/cgi-bin/cvstrac.cgi/knock/wiki/
 BuildRequires:	libpcap-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
