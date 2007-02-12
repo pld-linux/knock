@@ -1,5 +1,5 @@
 Summary:	Knock - a port-knocking server/client
-Summary(pl):	Knock - serwer/klient "port-knocking"
+Summary(pl.UTF-8):   Knock - serwer/klient "port-knocking"
 Name:		knock
 Version:	0.5
 Release:	2
@@ -22,15 +22,15 @@ bound to that port knock sequence. These port-hits need not be on open
 ports, since we use libpcap to sniff the raw interface traffic. This
 package contains the knock client.
 
-%description -l pl
-Knock jest serwerem/klientem nas³uchuj±cym/pukaj±cym do portów. Klient
-poprzez próby ³±czenia siê w okre¶lonej kolejno¶ci z odpowiednimi
-portami (niekoniecznie otwartymi) powoduje wywo³anie wcze¶niej
-okre¶lonej czynno¶ci. Ten pakiet zawiera klienta.
+%description -l pl.UTF-8
+Knock jest serwerem/klientem nasÅ‚uchujÄ…cym/pukajÄ…cym do portÃ³w. Klient
+poprzez prÃ³by Å‚Ä…czenia siÄ™ w okreÅ›lonej kolejnoÅ›ci z odpowiednimi
+portami (niekoniecznie otwartymi) powoduje wywoÅ‚anie wczeÅ›niej
+okreÅ›lonej czynnoÅ›ci. Ten pakiet zawiera klienta.
 
 %package server
 Summary:	Knock - a port-knocking server/client
-Summary(pl):	Knock - serwer/klient "port-knocking"
+Summary(pl.UTF-8):   Knock - serwer/klient "port-knocking"
 Group:		Applications/System
 Requires(post,preun):	/sbin/chkconfig
 
@@ -42,11 +42,11 @@ bound to that port knock sequence. These port-hits need not be on open
 ports, since we use libpcap to sniff the raw interface traffic. This
 package contains the knockd server.
 
-%description server -l pl
-Knock jest serwerem/klientem nas³uchuj±cym/pukaj±cym do portów. Klient
-poprzez próby ³±czenia siê w okre¶lonej kolejno¶ci z odpowiednimi
-portami (niekoniecznie otwartymi) powoduje wywo³anie wcze¶niej
-okre¶lonej czynno¶ci. Ten pakiet zawiera serwer.
+%description server -l pl.UTF-8
+Knock jest serwerem/klientem nasÅ‚uchujÄ…cym/pukajÄ…cym do portÃ³w. Klient
+poprzez prÃ³by Å‚Ä…czenia siÄ™ w okreÅ›lonej kolejnoÅ›ci z odpowiednimi
+portami (niekoniecznie otwartymi) powoduje wywoÅ‚anie wczeÅ›niej
+okreÅ›lonej czynnoÅ›ci. Ten pakiet zawiera serwer.
 
 %prep
 %setup -q
