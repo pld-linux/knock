@@ -1,5 +1,5 @@
 Summary:	Knock - a port-knocking server/client
-Summary(pl.UTF-8):   Knock - serwer/klient "port-knocking"
+Summary(pl.UTF-8):	Knock - serwer/klient "port-knocking"
 Name:		knock
 Version:	0.5
 Release:	2
@@ -30,7 +30,7 @@ określonej czynności. Ten pakiet zawiera klienta.
 
 %package server
 Summary:	Knock - a port-knocking server/client
-Summary(pl.UTF-8):   Knock - serwer/klient "port-knocking"
+Summary(pl.UTF-8):	Knock - serwer/klient "port-knocking"
 Group:		Applications/System
 Requires(post,preun):	/sbin/chkconfig
 
