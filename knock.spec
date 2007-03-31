@@ -11,6 +11,7 @@ Source1:	%{name}d.sysconfig
 Source2:	%{name}d.init
 URL:		http://zeroflux.org/cgi-bin/cvstrac.cgi/knock/wiki/
 BuildRequires:	libpcap-devel
+BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,6 +33,7 @@ określonej czynności. Ten pakiet zawiera klienta.
 Summary:	Knock - a port-knocking server/client
 Summary(pl.UTF-8):	Knock - serwer/klient "port-knocking"
 Group:		Applications/System
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 
 %description server
@@ -55,7 +57,7 @@ określonej czynności. Ten pakiet zawiera serwer.
 %configure
 %{__make}
 
-sed -i 's/^/#/' knockd.conf
+%{__sed} -i 's/^/#/' knockd.conf
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -71,17 +73,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post server
 /sbin/chkconfig --add knockd
-if [ -f /var/lock/subsys/knockd ]; then
-        /etc/rc.d/init.d/knockd restart 1>&2
-else
-        echo "Run \"/etc/rc.d/init.d/knockd start\" to start knockd daemon."
-fi
+%service knockd restart
 
 %preun server
 if [ "$1" = "0" ]; then
-        if [ -f /var/lock/subsys/knockd ]; then
-                /etc/rc.d/init.d/knockd stop 1>&2
-        fi
+	%service knockd stop
         /sbin/chkconfig --del knockd
 fi
 
@@ -92,7 +88,7 @@ fi
 
 %files server
 %defattr(644,root,root,755)
-%doc README ChangeLog TODO
+%doc ChangeLog README TODO
 %attr(755,root,root) %{_sbindir}/*
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/*
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.conf
